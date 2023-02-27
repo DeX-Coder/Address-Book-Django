@@ -1,8 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block page_title %}
 Home
 {% endblock page_title %}
 
+
 {% block page_content %}
-<h1>Hello! this works!</h1>
+<h1>Your Contacts</h1>
+<div>
+{% for datum in data %}
+    <div class="contact-name">
+        {{datum.first_name}} {{datum.last_name}}  {{datum.contact}}
+        </div>
+{% endfor %}
+</div>
 {% endblock page_content %}
