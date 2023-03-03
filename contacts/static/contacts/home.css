@@ -1,0 +1,42 @@
+a{
+    text-decoration: none;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact-details{
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: #ffffff;
+}
+
+.contact-details a{
+    padding: 0.5rem;
+}
+
+#list-headers{
+    display: flex;
+    justify-content: space-around;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.contact-list{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    margin: auto;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color:white ;
+}
+
+.contact-list:hover{
+    border-color: #602fa0;
+    border-style: groove;
+    word-spacing: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(190deg, #9c6add, white, #9c6add);
+}

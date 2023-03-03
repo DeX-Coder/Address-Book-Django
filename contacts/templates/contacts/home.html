@@ -3,15 +3,30 @@
 {% block page_title %}
 Home
 {% endblock page_title %}
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'contacts/home.css' %}">
+{% endblock css_files %}
 
-
+{% block page_heading %}Your Contacts{% endblock page_heading %}
 {% block page_content %}
-<h1>Your Contacts</h1>
-<div>
+<div class="contact-details">
+    <div id="list-headers"><span>Name</span> <span>Phone</span></div>
 {% for datum in data %}
-    <div class="contact-name">
-        {{datum.first_name}} {{datum.last_name}}  {{datum.contact}}
-        </div>
+         <a href="{% url 'details' datum.id %}">
+            <div class="contact-list">
+                {{datum.first_name}} {{datum.last_name}}
+                <span>
+                    {% if datum.contact.Work is None%}
+                        {{datum.contact.Mobile}}
+
+
+                    {% else %}
+                        {{datum.contact.Work}}
+            
+                    {% endif %}
+                </span>
+            </div>
+        </a>
 {% endfor %}
 </div>
 {% endblock page_content %}

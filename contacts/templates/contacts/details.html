@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+{{ title }}
+{% endblock page_title %}
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'contacts/details.css' %}">
+{% endblock css_files %}
+
+{% block page_heading %}
+{{ title }}
+{% endblock page_heading %}
+
+{% block page_nav %}
+<nav>
+    <h2 id="back-button"><a  href="{% url 'home' %}"> &lt</a></h2>
+</nav>
+{% endblock page_nav %}
+
+{% block page_content %}
+<div class="card">
+    <div class='avatar'>
+        <img id="profile_img" src="{% static 'contacts/images/'|add:profile_image %}" alt="">
+    </div>
+    <div id='contact-details'>
+        <h2>Contact:</h2>
+        <ul type="none">
+        {% for type, num in contact.items %}
+        <li><h3> {{ type }} - {{ num }}</h3></li>
+        {% endfor %}
+        </ul>
+    
+
+    {% if address is not None %}
+    <hr>
+    <b>Address</b>: <address>{{ address }}</address>
+    {% endif %}
+
+    {% if birthday is not None %}
+    <hr>
+    <b>Birthday</b>: <time>{{ birthday }}</time>
+    {% endif %}
+
+    {% if nickname is not None %}
+    <hr>
+    <b>Nickname</b>: {{nickname}}
+    {% endif %}
+    </div>
+</div>
+{% endblock page_content %}
